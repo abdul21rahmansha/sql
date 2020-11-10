@@ -1,0 +1,53 @@
+create database test;
+\c test;
+create table company(id int primary key not null, name text not null, age int not null, address char(50), salary real);
+create table department(id int primary key not null, dept char(50) not null,emp_id not null);
+create table student( id int, blood char(2));
+drop table student;
+\d;
+insert into company(id, name, age, address, salary) values(7, 'abdul',20, 'Tamil Nadu', 15000); 
+                                                    values(4, 'ainul',24, 'Kerala', 20000);
+                                                    values(2, 'khadher',12, 'Delhi', 20000);
+                                                    values(1, 'Muba', 16, 'Mumbai', 30000);
+                                                    values(3, 'shari', 21, 'Tamil Nadu',);
+select * from company;
+select id, name from company;
+7	"abdul"
+6	"ainul"
+1	"muba"
+3	"Khadher"
+
+--where calues
+select name from company where age=34;
+
+select name from company where age!=34;
+"abdul"
+"ainul"
+"muba"
+"Khadher"
+select name from company where age<>34;
+select name from company where age>16;
+select name from company where age<20;
+select name from company where age>=20;
+select name from company where age<=20;
+
+-- logilacal operation
+select * from company where age>20 and salary>15000;
+1	"muba"	27	"triplicane "	100000
+	3    "Khadher" 27	"triplicane"	100000
+select * from company where age>20 or salary>20000;
+select * from company where salary is null;
+select * from company where name like 'A%';
+select * from company where name like '%a';
+select * from company where name like '%a%';
+select * from company where age between ('20' and '35');
+
+--esperessions
+select name as employee_name from company;
+select count(*) from company;
+select max(age) from company;
+selcect min(age) from company;
+20
+select sum(salary) from company where age between '20' and '35'; 
+260000
+select avg(salary) from company;
