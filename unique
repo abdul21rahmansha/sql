@@ -1,0 +1,5 @@
+create database products;
+\c products;
+create table products( product_no integer, name text, price numeric,  UNIQUE(product_no, name));
+inserst into products value (4, 'book',250,),(3'pen',5);
+select * from products;
