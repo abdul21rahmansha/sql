@@ -1,0 +1,5 @@
+create database products;
+\c products;
+create table products( product_no integer, name text, price numeric CHECK(price>0), discounted_price numeric CHECK(discounted_price<price));
+insert into products values (10, 'pen',5,4.5), (025, 'book', 50,45);
+select * from products;
